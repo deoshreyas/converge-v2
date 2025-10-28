@@ -1,0 +1,27 @@
+@font-face {
+  font-family: "Folsom";
+  src: url("/src/assets/folsom-black.woff2") format("woff2");
+  font-weight: 900;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Klima";
+  src: url("/src/assets/klima-bold.woff2") format("woff2");
+  font-weight: 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Klima";
+  src: url("/src/assets/klima-medium.woff2") format("woff2");
+  font-weight: 500;
+  font-display: swap;
+}
+
+@import "tailwindcss";
+
+@theme {
+  --font-folsom: "Folsom", sans-serif;
+  --font-sans: "Klima", sans-serif;
+}

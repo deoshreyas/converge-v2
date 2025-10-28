@@ -1,16 +1,100 @@
 ---
-
+import Layout from "../layouts/layout.astro";
+import { Picture } from "astro:assets";
+import cityImage from "../assets/city.webp";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout title="Converge - build bots, win prizes">
+	<main class="relative w-full min-h-screen overflow-hidden">
+		<Picture
+			src={cityImage}
+			formats={["avif", "webp"]}
+			alt="A pixel art city background."
+			class="absolute inset-0 w-full h-full object-cover"
+			loading="eager"
+		/>
+		<div class="relative inline-block mx-auto w-full pt-12 px-4">
+			<div class="mx-auto text-center">
+				<div class="relative inline-block">
+					<h1
+						class="font-folsom text-6xl sm:text-7xl md:text-8xl lg:text-9xl text-white shadow-xs"
+					>
+						Converge
+					</h1>
+					<span
+						class="absolute -top-2 sm:-top-4 -right-8 sm:-right-12 bg-yellow-400 text-black text-lg sm:text-xl md:text-2xl font-bold px-2 sm:px-3 py-1 rounded-full rotate-12 font-mono"
+						>V2!</span
+					>
+				</div>
+				<p
+					class="mt-4 text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-white font-medium px-4"
+				>
+					Build bots, win prizes
+				</p>
+				<div class="mt-8">
+					<a href="https://forms.hackclub.com/converge" target="_blank">
+						<button
+							class="bg-yellow-400 hover:bg-yellow-300 text-black font-bold text-xl sm:text-2xl px-8 py-4 rounded-full shadow-lg transform hover:scale-105 transition-all duration-200 cursor-pointer"
+						>
+							Submit your project!
+						</button>
+					</a>
+				</div>
+			</div>
+		</div>
+
+		<!-- Scroll indicator -->
+		<div
+			class="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-center"
+		>
+			<p class="text-white text-lg font-medium mb-2 animate-bounce">
+				or scroll down...
+			</p>
+			<svg
+				class="w-6 h-6 mx-auto text-white animate-bounce"
+				fill="none"
+				stroke="currentColor"
+				viewBox="0 0 24 24"
+				xmlns="http://www.w3.org/2000/svg"
+			>
+				<path
+					stroke-linecap="round"
+					stroke-linejoin="round"
+					stroke-width="2"
+					d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+			</svg>
+		</div>
+	</main>
+
+	<!-- Requirements Section -->
+	<section class="bg-white py-16 px-4">
+		<div class="max-w-5xl mx-auto text-center">
+			<h2
+				class="font-folsom text-4xl sm:text-5xl md:text-6xl text-gray-900 mb-16"
+			>
+				How It Works
+			</h2>
+			<div class="space-y-6 text-2xl leading-relaxed text-gray-700 max-w-6xl mx-auto">
+				<p>
+					<span class="font-bold text-gray-900">Build your bots!</span> Create one or more bots for chat platforms like Discord, Slack, Telegram, or any messaging app. Building for multiple platforms is encouraged but not required. Make your bot something actually <i>interesting</i> - no boring ideas (e.g. todo lists, weather bots).
+				</p>
+
+				<p>
+					<span class="font-bold text-gray-900">Make them public.</span> Your bots need to be usable by real people! Others should be able to interact with your bots without needing to host them themselves.
+				</p>
+
+				<p>
+					<span class="font-bold text-gray-900">Iterate.</span> Submit your bot for initial review, and we'll provide feedback to help you improve it to make it even better.
+				</p>
+
+				<p>
+					<span class="font-bold text-gray-900">•</span> Track your coding time and earn 1 token per hour (up to 12 tokens maximum).
+				</p>
+
+				<p>
+					Your final token count goes up or down based on community voting results. You can split time across multiple bots <i>but</i> need at least 4 hours on one bot to unlock the Emporium, and if you're making more than one bot, there's a higher quality bar for your project to be accepted.
+				</p>
+			</div>
+		</div>
+	</section>
+</Layout>
