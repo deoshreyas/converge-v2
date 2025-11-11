@@ -2,6 +2,9 @@
 import Layout from "../layouts/layout.astro";
 import { Picture } from "astro:assets";
 import cityImage from "../assets/city.webp";
+import { getCollection } from "astro:content";
+
+const guides = await getCollection('guides');
 ---
 
 <Layout title="Converge - build bots, win prizes">
@@ -94,6 +97,24 @@ import cityImage from "../assets/city.webp";
 				<p>
 					Your final token count goes up or down based on community voting results. You can split time across multiple bots <i>but</i> need at least 4 hours on one bot to unlock the Emporium, and if you're making more than one bot, there's a higher quality bar for your project to be accepted.
 				</p>
+			</div>
+		</div>
+	</section>
+
+	<!-- Guides Section -->
+	<section class="bg-gray-100 py-16 px-4">
+		<div class="max-w-5xl mx-auto text-center">
+			<h2 class="font-folsom text-4xl sm:text-5xl md:text-6xl text-gray-900 mb-16">
+				Guides
+			</h2>
+			<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+				{guides.map((guide) => (
+					<a href={`/guides/${guide.slug}`} class="block bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
+					<img src={guide.data.bannerImg} alt={guide.data.title} class="w-full h-40 object-cover rounded-md mb-4" />
+					<h3 class="font-bold text-xl mb-2">{guide.data.title}</h3>
+					<p class="text-gray-600">{guide.data.description}</p>
+					</a>
+				))}
 			</div>
 		</div>
 	</section>
