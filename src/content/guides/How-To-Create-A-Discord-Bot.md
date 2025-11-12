@@ -44,7 +44,7 @@ source venv/bin/activate
 Now, install the following packages:
 
 ```bash
-pip install discord.py aiosqlite
+pip install discord.py aiosqlite python-dotenv
 ```
 
 `discord.py` is the library we'll use to interact with the Discord API, and `aiosqlite` will help us manage our SQLite database *asynchronously*.
@@ -56,7 +56,7 @@ pip install discord.py aiosqlite
 Create a new file named `.env` in your project folder. This file will store your tokens securely. Add the following lines to the `.env` file (we'll add the actual tokens later):
 
 ```
-BOT_TOKEN=
+DISCORD_TOKEN=
 REVIEW_CHANNEL_ID=
 CONFESSIONS_CHANNEL_ID=
 ```
@@ -303,7 +303,7 @@ The slightly less good news? We now have to set up the bot on Discord and get th
 
 <p align="center"><img src="/assets/2.png" alt="New Application Name" width="500"></p>
 
-3. In the left sidebar, click on "Bot" and then generate a token by clicking on "Reset token". Confirm the action. Copy the generated token and paste it in the `BOT_TOKEN` field in your `.env` file. Also scroll down and enable the `Server Members Intent` and `Message Content Intent` options. Save changes!
+3. In the left sidebar, click on "Bot" and then generate a token by clicking on "Reset token". Confirm the action. Copy the generated token and paste it in the `DISCORD_TOKEN` field in your `.env` file. Also scroll down and enable the `Server Members Intent` and `Message Content Intent` options. Save changes!
 
 <p align="center"><img src="/assets/3.png" alt="Intent Options" width="600"></p>
 
